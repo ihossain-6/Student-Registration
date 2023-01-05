@@ -5,7 +5,7 @@ error YouAreNotFromAuthority();
 error NameNotProvided();
 error EmailNotProvided();
 
-contract StudentRegistery{
+contract StudentRegistration{
     
     struct Student{
         uint256 id;
