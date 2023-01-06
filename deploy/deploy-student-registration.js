@@ -16,3 +16,5 @@ module.exports = async({getNamedAccounts, deployments}) => {
 
     log(`Student Registration deployed at ${studentRegistration.address}`)
 }
+
+module.exports.tags = ["all", "studentregistration"]
