@@ -24,7 +24,7 @@ contract StudentRegistration{
     }
 
     mapping(uint256 => Student) private s_students;
-    address authority;
+    address private authority;
 
     constructor() {
         authority = msg.sender;
@@ -44,4 +44,8 @@ contract StudentRegistration{
     function seeStudent(uint256 id) external view returns(Student memory) {
         return s_students[id];
     } 
+
+    function seeAuthority() external view returns(address) {
+        return authority;
+    }
 }
