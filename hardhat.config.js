@@ -11,6 +11,7 @@ require("hardhat-deploy")
  */
 
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY
+const POLYGONSCAN_API_KEY= process.env.POLYGONSCAN_API_KEY
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL 
 const PRIVATE_KEY = process.env.PRIVATE_KEY
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || ""
@@ -46,6 +47,8 @@ module.exports = {
     gasReporter: {
         enabled: true,
         currency: "USD",
+        token: 'MATIC',
+        gasPriceApi: "https://api.polygonscan.com/api?module=proxy&action=eth_gasPrice",
         outputFile: "gas-report.txt",
         noColors: true,
         coinmarketcap: COINMARKETCAP_API_KEY,
