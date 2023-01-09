@@ -8,8 +8,15 @@ const networkConfig = {
 }
 
 const developmentChains = ["hardhat", "localhost"]
+const VERIFICATION_BLOCK_CONFIRMATIONS = 6
+
+const frontEndContractFile ="../studentregistration-frontend/constants/networkMapping.json"
+const frontEndAbiLocation = "../studentregistration-frontend/constants/"
 
 module.exports = {
     networkConfig,
-    developmentChains
+    developmentChains,
+    VERIFICATION_BLOCK_CONFIRMATIONS,
+    frontEndContractFile,
+    frontEndAbiLocation
 }
