@@ -14,7 +14,7 @@ contract StudentRegistration{
         string imgHash;
     }
 
-    event StudentAdded(uint256 indexed id, string indexed name, string email, string imgHash);
+    event StudentAdded(uint256 indexed id, string name, string email, string imgHash);
 
     modifier onlyAuthority(){
         if(msg.sender != authority) {
@@ -38,7 +38,7 @@ contract StudentRegistration{
             revert EmailNotProvided();
         }
         s_students[id] = Student(id, name, email, imgHash);
-        emit StudentAdded(id, imgHash, name, email);
+        emit StudentAdded(id, name, email, imgHash);
     }
 
     function seeStudent(uint256 id) external view returns(Student memory) {
